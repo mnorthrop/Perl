@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+
+my @vg_list = `lsvg`;
+chomp(@vg_list);
+
+foreach $vg (@vg_list) {
+        print "***************************\n";
+        print "VOLUME GROUP $vg:\n";
+        print `lsvgfs $vg`;
+        print "\n";
+}
